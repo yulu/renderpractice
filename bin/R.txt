@@ -2,7 +2,13 @@ int dimen activity_horizontal_margin 0x7f050000
 int dimen activity_vertical_margin 0x7f050001
 int drawable earthtruecolor_nasa_big 0x7f020000
 int drawable ic_launcher 0x7f020001
-int drawable world_map_1 0x7f020002
+int drawable negx 0x7f020002
+int drawable negy 0x7f020003
+int drawable negz 0x7f020004
+int drawable posx 0x7f020005
+int drawable posy 0x7f020006
+int drawable posz 0x7f020007
+int drawable world_map_1 0x7f020008
 int id action_settings 0x7f090001
 int id container 0x7f090000
 int layout activity_main 0x7f030000

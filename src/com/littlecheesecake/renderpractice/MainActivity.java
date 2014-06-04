@@ -1,8 +1,5 @@
 package com.littlecheesecake.renderpractice;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-
 import rajawali.RajawaliActivity;
 import rajawali.renderer.RajawaliRenderer;
 import rajawali.util.RajLog;
@@ -27,8 +24,8 @@ public class MainActivity extends RajawaliActivity {
 		
 	}
 	
-	private TestRenderer createRenderer(){
-		return new TestRenderer(this);
+	private SkyBoxRenderer createRenderer(){
+		return new SkyBoxRenderer(this);
 	}
 
 	

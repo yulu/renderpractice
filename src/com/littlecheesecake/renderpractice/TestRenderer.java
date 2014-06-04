@@ -38,7 +38,7 @@ public class TestRenderer extends RajawaliRenderer{
 			e.printStackTrace();
 		}
 		
-		getCurrentCamera().setZ(6);
+		getCurrentCamera().setZ(5);
 	}
 	
 	public void onDrawFrame(GL10 glUnused){

@@ -24,8 +24,8 @@ public class MainActivity extends RajawaliActivity {
 		
 	}
 	
-	private SkyBoxRenderer createRenderer(){
-		return new SkyBoxRenderer(this);
+	private ColorLineRenderer createRenderer(){
+		return new ColorLineRenderer(this);
 	}
 
 	

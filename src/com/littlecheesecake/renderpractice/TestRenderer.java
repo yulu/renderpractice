@@ -11,6 +11,13 @@ import rajawali.primitives.Sphere;
 import rajawali.renderer.RajawaliRenderer;
 import android.content.Context;
 
+/**
+ * This is a test renderer:
+ * render a sphere with world map
+ * TODO: add gesture control later
+ * @author yulu
+ *
+ */
 public class TestRenderer extends RajawaliRenderer{
 
 	private DirectionalLight mLight;

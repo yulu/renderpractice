@@ -80,7 +80,7 @@ public class PlanesGaloreMaterialPlugin implements IMaterialPlugin{
 			mvFog = (RFloat) addVarying(V_FOG, DataType.FLOAT);
 		}
 		
-		@Override
+		/*@Override
 		public void main(){
 			RFloat time = (RFloat) getGlobal(DefaultShaderVar.U_TIME);
 			RFloat rotation = new RFloat("rotation");
@@ -117,6 +117,29 @@ public class PlanesGaloreMaterialPlugin implements IMaterialPlugin{
 			
 			mvFog.assign(enclose(new RFloat(1.0f).divide(new RFloat(40.f))).multiply(planeDist));
 			mvFog.assign(new RFloat(1.f).subtract(mvFog));
+		}*/
+		
+		@Override
+		public void mainRaw(StringBuilder s){
+			String s0 = "\n" +
+						"float rotation = uTime * aRotationSpeed;\n" +
+						"mat4 mz = mat4(1.0);\n" +
+						"mz[0][0] = cos(rotation);\n" +
+						"mz[0][1] = sin(rotation);\n" +
+						"mz[1][0] = -sin(rotation);\n" +
+						"mz[1][1] = cos(rotation);\n" +
+						"mat4 my = mat4(1.0);\n" +
+						"my[0][0] = cos(rotation);\n" +
+						"my[0][2] = -sin(rotation);\n" +
+						"my[2][0] = sin(rotation);\n" +
+						"my[2][2] = cos(rotation);\n" +
+						"vec4 rotPos = gPosition*mz*my;\n" +
+						"rotPos = rotPos + aPlanePosition;\n" +
+						"gPosition = rotPos;\n" +
+						"float planeDist = distance(uCameraPos, gPosition.xyz);\n" +
+						"vFog = (1.0/40.0)*planeDist;\n" +
+						"vFog = 1.0 - vFog;\n";
+			s.append(s0);
 		}
 		
 		@Override
@@ -186,10 +209,15 @@ public class PlanesGaloreMaterialPlugin implements IMaterialPlugin{
 			mvFog = (RFloat) addVarying(V_FOG, DataType.FLOAT);
 		}
 		
+		//@Override
+		//public void main(){
+			//RVec4 gColor = (RVec4) getGlobal(DefaultShaderVar.G_COLOR);
+			//gColor.rgb().assignMultiply(mvFog);
+		//}
+		
 		@Override
-		public void main(){
-			RVec4 gColor = (RVec4) getGlobal(DefaultShaderVar.G_COLOR);
-			gColor.rgb().assignMultiply(mvFog);
+		public void mainRaw(StringBuilder s){
+			s.append("\ngColor.rgb *= vFog;\n");
 		}
 		
 	}

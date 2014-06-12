@@ -24,8 +24,8 @@ public class MainActivity extends RajawaliActivity {
 		
 	}
 	
-	private LotsTextureRenderer createRenderer(){
-		return new LotsTextureRenderer(this);
+	private ImagesRenderer createRenderer(){
+		return new ImagesRenderer(this);
 	}
 
 	

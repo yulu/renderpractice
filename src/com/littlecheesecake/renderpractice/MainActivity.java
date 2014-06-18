@@ -24,8 +24,8 @@ public class MainActivity extends RajawaliActivity {
 		
 	}
 	
-	private ImagesRenderer createRenderer(){
-		return new ImagesRenderer(this);
+	private VedioRenderer createRenderer(){
+		return new VedioRenderer(this);
 	}
 
 	

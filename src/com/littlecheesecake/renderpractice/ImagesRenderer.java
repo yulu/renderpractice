@@ -39,6 +39,9 @@ public class ImagesRenderer extends RajawaliRenderer{
 		mScreenQuad.setMaterial(mMaterial);
 		addChild(mScreenQuad);
 		
+		/**
+		 * load the textures to a list at the beginning
+		 */
 		if(mTextures == null){
 			mTextures = new ATexture[NUM_TEXTURES];
 		}

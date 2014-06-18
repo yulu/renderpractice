@@ -131,6 +131,7 @@ public final class R {
         public static final int grey_scale_fragment_shader=0x7f040003;
         public static final int minimal_vertex_shader=0x7f040004;
         public static final int sepia_fragment_shader=0x7f040005;
+        public static final int sintel_trailer_480p=0x7f040006;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
